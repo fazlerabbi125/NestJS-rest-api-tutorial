@@ -46,7 +46,9 @@ class User {
 interface UserStatics{
     login:(email:string,password:string)=>Promise<UserDocument|null>
 }
-type UserDocument = User & Document; //for instance methods, add method to class or add interface or type with & here 
+
+// for instance, methods, add them to the class as a function type or add interface or type with & operator to create document type. Then, define instance methods as usual.
+type UserDocument = User & Document;
 
 type UserModel=Model<UserDocument> &  UserStatics;
 
